@@ -10,6 +10,12 @@ An app designed for you to keep track of your ingredients, track/plan out your m
 
 ---
 
+### **_Prep_**
+
+ERD: ## ![Image](./assets/ERD.png) 
+
+Component Heirarchy Diagram: ## ![Image](./assets/Component Heirarchy Diagram.png)
+
 ### ***_Technologies_***
 
 - ReactJs
