@@ -14,7 +14,7 @@ An app designed for you to keep track of your ingredients, track/plan out your m
 
 ERD: ## ![Image](./assets/ERD.png) 
 
-Component Heirarchy Diagram: ## ![Image](./assets/Component Heirarchy Diagram.png)
+Component Heirarchy Diagram: ## ![Image](ComponentHeirarchyDiagram.png)
 
 ### ***_Technologies_***
 
