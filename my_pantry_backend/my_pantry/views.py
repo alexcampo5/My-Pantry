@@ -46,5 +46,7 @@ class DailyMealDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DailyMealSerializer
 
 
-@api_view({"GET"})
-def randJSON(request)
+# @api_view(["GET"])
+# def randJSON(request):
+#   obj = {'key':'value'}
+#   return HTTPResponse(obj, content_type = 'application/json')

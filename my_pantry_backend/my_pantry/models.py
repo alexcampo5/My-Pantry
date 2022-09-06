@@ -27,10 +27,15 @@ class Ingredient(models.Model):
     price_per_unit = models.FloatField
     unit_measurement = models.CharField(max_length=30)
     recipes = models.ManyToManyField(
-        Recipe, related_name='recipe')
+        Recipe, blank=True)
 
     def __str__(self):
         return self.name
+
+
+# class MealTable(models.Model):
+#     recipe_id = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+#     ingredient_id = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
 
 
 class DailyMeal(models.Model):
