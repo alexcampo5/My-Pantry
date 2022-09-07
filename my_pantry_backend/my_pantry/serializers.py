@@ -1,4 +1,3 @@
-from re import T
 from rest_framework import serializers
 from .models import User, Ingredient, Recipe, DailyMeal
 
@@ -24,7 +23,7 @@ class IngredientSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Ingredient
-        fields = ('id', 'price_per_unit', 'unit_measurement', 'recipes')
+        fields = ('id', 'unit_measurement', 'recipes')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

@@ -24,10 +24,9 @@ class Recipe(models.Model):
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=50)
-    price_per_unit = models.FloatField
     unit_measurement = models.CharField(max_length=30)
     recipes = models.ManyToManyField(
-        Recipe, blank=True)
+        Recipe)
 
     def __str__(self):
         return self.name
