@@ -1,5 +1,5 @@
 const Router = require('express').Router()
-const controller = require('../controllers/UserController')
+const controller = require('../controllers/RecipeController')
 const middleware = require('../middleware')
 
 Router.get('/:user_id', controller.getProfileByID)
