@@ -1,3 +1,0 @@
-CREATE DATABASE my_pantry;
-CREATE USER alexcampo5 WITH PASSWORD 'myPantryAdmin';
-GRANT ALL PRIVILEGES ON DATABASE my_pantry TO alexcampo5
