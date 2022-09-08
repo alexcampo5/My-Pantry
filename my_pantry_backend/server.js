@@ -7,7 +7,14 @@ const AppRouter = require('./routes/AppRouter')
 
 const PORT = process.env.PORT || 3001
 
-app.use(cors())
+const corsOptions = {
+  origin: ['http://localhost:3000', 'localhost:3000'],
+  methods: ['GET', 'POST', 'DELETE', 'PUT', 'UPDATE'],
+  preflightContinue: false,
+  credentials: true
+}
+
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
