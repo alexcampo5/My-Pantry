@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import MyPantry from './pages/MyPantry'
 import Discover from './pages/Discover'
 import Planner from './pages/Planner'
+import MealDetails from './pages/MealDetails'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -24,12 +25,13 @@ function App() {
   return user ? (
     <div className="App">
       <h1>MyPantry</h1>
-      <NavBar />
       <Routes>
         <Route path="/mypantry" element={<MyPantry />} />
         <Route path="/discover" element={<Discover />} />
+        <Route path="/discover/:mealId" element={<MealDetails />} />
         <Route path="/planner" element={<Planner />} />
       </Routes>
+      <NavBar />
     </div>
   ) : (
     <div>
