@@ -43,7 +43,7 @@ const createMealCombo = async (req, res) => {
     console.log(req.ingredientId)
     let meal = await Recipe_Ingredient.create({
       recipeId: req.params.recipe_id,
-      ingredientId: req.body
+      ...req.body
     })
     res.send(meal)
   } catch (error) {
