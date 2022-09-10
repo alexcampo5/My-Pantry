@@ -4,8 +4,8 @@ const controller = require('../controllers/DayController')
 
 Router.get('/:day_id', controller.getDayById)
 Router.get('/', controller.getAllDays)
-Router.post('/', controller.createProfile)
-Router.put('/:day_id', controller.updateProfile)
-Router.delete('/:day_id', controller.deleteProfile)
+Router.post('/', controller.createDay)
+Router.put('/:day_id', controller.updateDay)
+Router.delete('/:day_id', controller.deleteDay)
 
 module.exports = Router

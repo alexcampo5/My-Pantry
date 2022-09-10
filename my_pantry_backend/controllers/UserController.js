@@ -33,7 +33,7 @@ const updateUser = async (req, res) => {
       where: { id: req.params.user_id },
       returning: true
     })
-    res.send(updatedProfile)
+    res.send(updatedUser)
   } catch (error) {
     throw error
   }

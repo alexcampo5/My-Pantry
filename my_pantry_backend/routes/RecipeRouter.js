@@ -1,11 +1,12 @@
 const Router = require('express').Router()
 const controller = require('../controllers/RecipeController')
-const middleware = require('../middleware')
+//const middleware = require('../middleware')
 
-Router.get('/:user_id', controller.getProfileByID)
-Router.get('/', controller.getAllUser)
-Router.post('/', controller.createProfile)
-Router.put('/:user_id', controller.updateProfile)
-Router.delete('/:user_id', controller.deleteProfile)
+Router.get('/:recipe_id', controller.getRecipeById)
+Router.get('/', controller.getAllRecipes)
+Router.post('/', controller.createRecipe)
+Router.put('/:recipe_id', controller.updateRecipe)
+Router.delete('/:recipe_id', controller.deleteRecipe)
+Router.post('/meals/:recipe_id', controller.createMealCombo)
 
 module.exports = Router

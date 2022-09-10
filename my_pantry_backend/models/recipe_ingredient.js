@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Recipe_Ingredient.init(
     {
-      recipeIds: {
+      recipeId: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
         references: {
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
-      ingredientIds: {
+      ingredientId: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
         references: {

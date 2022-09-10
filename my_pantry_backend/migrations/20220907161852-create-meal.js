@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      recipeIds: {
+      recipeId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: {
@@ -16,7 +16,7 @@ module.exports = {
           key: 'id'
         }
       },
-      ingredientIds: {
+      ingredientId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: {

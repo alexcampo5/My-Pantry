@@ -1,11 +1,10 @@
 const Router = require('express').Router()
-const controller = require('../controllers/UserController')
-const middleware = require('../middleware')
+const controller = require('../controllers/IngredientController')
 
-Router.get('/:user_id', controller.getProfileByID)
-Router.get('/', controller.getAllUser)
-Router.post('/', controller.createProfile)
-Router.put('/:user_id', controller.updateProfile)
-Router.delete('/:user_id', controller.deleteProfile)
+Router.get('/:ingredient_id', controller.getIngredientById)
+Router.get('/', controller.getAllIngredients)
+Router.post('/', controller.createIngredient)
+Router.put('/:ingredient_id', controller.updateIngredient)
+Router.delete('/:ingredient_id', controller.deleteIngredient)
 
 module.exports = Router

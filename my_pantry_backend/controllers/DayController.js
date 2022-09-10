@@ -30,7 +30,41 @@ const getDayById = async (req, res) => {
   }
 }
 
+const createDay = async (req, res) => {
+  try {
+    let day = await Day.create(req.body)
+    res.send(day)
+  } catch (error) {
+    throw error
+  }
+}
+
+const updateDay = async (req, res) => {
+  try {
+    let updatedDay = await Day.update(req.body, {
+      where: { id: req.params.day_id },
+      returning: true
+    })
+    res.send(updatedDay)
+  } catch (error) {
+    throw error
+  }
+}
+
+const deleteDay = async (req, res) => {
+  try {
+    let deletedDay = await Day.destroy({
+      where: { id: req.params.day_id }
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getAllDays,
-  getDayById
+  getDayById,
+  createDay,
+  updateDay,
+  deleteDay
 }
