@@ -53,8 +53,7 @@ export default function Discover() {
     let res = axios.post(`http://localhost:3001/recipes/`, {
       recipeName: recipe.label,
       imageUrl: recipe.image,
-      directions: recipe.url,
-      dayId: 3
+      directions: recipe.url
     })
     navigate('/mypantry')
   }

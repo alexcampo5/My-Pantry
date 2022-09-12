@@ -31,7 +31,6 @@ export default function NewRecipe() {
             onChange={handleRecipeChange}
             name="recipeName"
             type="text"
-            placeholder="image URL"
             value={newRecipeValues.recipeName}
             required
           />
@@ -42,18 +41,17 @@ export default function NewRecipe() {
             onChange={handleRecipeChange}
             name="imageUrl"
             type="text"
-            placeholder="image url"
             value={newRecipeValues.imageUrl}
             required
           />
         </div>
 
-        <div className="input-wrapper">
+        <div>
           <label htmlFor="directions">Directions</label>
           <input
             onChange={handleRecipeChange}
             type="text"
-            name="location"
+            name="directions"
             value={newRecipeValues.directions}
             required
           />
