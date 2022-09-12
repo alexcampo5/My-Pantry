@@ -44,6 +44,12 @@ html{
   margin-bottom: 18%;
 }
 
+.recipe-image{
+  border-radius: 10%;
+  width: 80vw;
+  height: 30vh
+}
+
 /* Taken from CSS Tricks: 
 .favorite-icon {
   margin: 50px 0;
