@@ -8,25 +8,28 @@ import Discover from './pages/Discover'
 import Planner from './pages/Planner'
 import MealDetails from './pages/MealDetails'
 import NewPost from './pages/NewRecipe'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 
 function App() {
   const [user, setUser] = useState(null)
-  const [useEffectToggler, setUseEffectToggler] = useState(false)
+  const [userIdLogin, setUserIdLogin] = useState(null)
 
   const getUserData = async () => {
-    const res = await axios.get(`http://localhost:3001/users/`)
+    const res = await axios.get(`http://localhost:3001/users/${userIdLogin}`)
     setUser(res.data)
-    setUseEffectToggler(true)
   }
 
   useEffect(() => {
     getUserData()
-  }, [])
+  }, [userIdLogin])
 
   return user ? (
     <div className="App">
       <h1>MyPantry</h1>
       <Routes>
+        <Route path="/login" element={<Login loginId={setUserIdLogin} />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/mypantry" element={<MyPantry />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/discover/:mealId" element={<MealDetails />} />
