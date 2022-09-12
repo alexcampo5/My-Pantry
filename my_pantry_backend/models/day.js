@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
   class Day extends Model {
     static associate(models) {
       Day.belongsTo(models.User, { foreignKey: 'userId' })
-      Day.hasMany(models.Recipe, { foreignKey: 'dayId' })
     }
   }
   Day.init(

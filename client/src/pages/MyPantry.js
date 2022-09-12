@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function MyPantry() {
+  const navigate = useNavigate()
   const [favoriteMeals, setFavoriteMeals] = useState()
   const [myIngredients, setMyIngredients] = useState()
 
@@ -22,9 +24,14 @@ export default function MyPantry() {
     getIngredients()
   }, [])
 
+  const navigateNewPost = () => {
+    navigate('/newpost')
+  }
+
   return favoriteMeals ? (
     <div>
-      <h1>My Pantry</h1>
+      <button>New Recipe</button>
+      <button>New Ingredient</button>
       <h1>My Favorite Meals</h1>
       {favoriteMeals.map((meal) => (
         <div>

@@ -8,22 +8,22 @@ module.exports = (sequelize, DataTypes) => {
         through: models.Recipe_Ingredient,
         as: 'recipe_list'
       })
-      Recipe.belongsTo(models.Day, { foreignKey: 'dayId' })
+      Recipe.belongsTo(models.User, { foreignKey: 'userId' })
     }
   }
   Recipe.init(
     {
-      recipeName: DataTypes.STRING,
-      imageUrl: DataTypes.STRING,
-      directions: DataTypes.STRING,
-      dayId: {
+      userId: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
         references: {
-          model: 'days',
+          model: 'users',
           key: 'id'
         }
-      }
+      },
+      recipeName: DataTypes.STRING,
+      imageUrl: DataTypes.STRING,
+      directions: DataTypes.STRING
     },
     {
       sequelize,

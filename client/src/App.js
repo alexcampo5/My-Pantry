@@ -7,6 +7,7 @@ import MyPantry from './pages/MyPantry'
 import Discover from './pages/Discover'
 import Planner from './pages/Planner'
 import MealDetails from './pages/MealDetails'
+import NewPost from './pages/NewRecipe'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -30,6 +31,7 @@ function App() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/discover/:mealId" element={<MealDetails />} />
         <Route path="/planner" element={<Planner />} />
+        <Route path="/newrecipe" element={<NewPost />} />
       </Routes>
       <NavBar />
     </div>

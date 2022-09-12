@@ -49,6 +49,16 @@ export default function Discover() {
     setSearchValues('')
   }
 
+  const addMealToFavorites = (recipe) => {
+    let res = axios.post(`http://localhost:3001/recipes/`, {
+      recipeName: recipe.label,
+      imageUrl: recipe.image,
+      directions: recipe.url,
+      dayId: 3
+    })
+    navigate('/mypantry')
+  }
+
   return mealsByIngredient ? (
     <div>
       <h1>Discover Recipes</h1>
@@ -65,14 +75,18 @@ export default function Discover() {
       </form>
       <div className="discover-recipe-list">
         {mealsByIngredient.map((recipe) => (
-          <div
-            key={recipe.recipe.uri}
-            className="discover-meal-card"
-            onClick={() => mealDetailsNav(recipe.recipe.uri)}
-          >
-            <h2>{recipe.recipe.label}</h2>
-            <img src={recipe.recipe.image} className="discover-image" />
-            <button>Add to favorites</button>
+          <div key={recipe.recipe.uri} className="discover-meal-card">
+            <h2 onClick={() => mealDetailsNav(recipe.recipe.uri)}>
+              {recipe.recipe.label}
+            </h2>
+            <img
+              src={recipe.recipe.image}
+              className="discover-image"
+              onClick={() => mealDetailsNav(recipe.recipe.uri)}
+            />
+            <button onClick={() => addMealToFavorites(recipe.recipe)}>
+              Add to favorites
+            </button>
           </div>
         ))}
       </div>

@@ -8,6 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
       recipeName: {
         type: Sequelize.STRING
       },
@@ -16,14 +24,6 @@ module.exports = {
       },
       directions: {
         type: Sequelize.STRING
-      },
-      dayId: {
-        type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'days',
-          key: 'id'
-        }
       },
       createdAt: {
         allowNull: false,
