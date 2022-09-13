@@ -3,24 +3,25 @@ import { useState, useEffect } from 'react'
 import RecipeCard from '../components/RecipeCard'
 import { useNavigate } from 'react-router-dom'
 
-export default function Discover() {
+export default function Discover(props) {
   const navigate = useNavigate()
-  const [mealsByIngredient, setMealsByIngredient] = useState()
-  const [selectedIngredient, setSelectedIngredient] = useState()
+  // const [mealsByIngredient, setMealsByIngredient] = useState()
+  // const [selectedIngredient, setSelectedIngredient] = useState()
   const [searchValues, setSearchValues] = useState('')
 
-  const discoverRecipesByIngredient = async () => {
-    selectedIngredient.replace(' ', '%20')
-    const res = await axios.get(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${selectedIngredient}&app_id=92b738b0&app_key=69817bebee2a425a8a0f5dd7d1699690`
-    )
-    console.log(res.data.hits)
-    setMealsByIngredient(res.data.hits)
-  }
+  // const discoverRecipesByIngredient = async () => {
+  //   selectedIngredient.replace(' ', '%20')
+  //   const res = await axios.get(
+  //     `https://api.edamam.com/api/recipes/v2?type=public&q=${selectedIngredient}&app_id=92b738b0&app_key=69817bebee2a425a8a0f5dd7d1699690`
+  //   )
+  //   console.log(res.data.hits)
+  //   setMealsByIngredient(res.data.hits)
+  // }
 
   useEffect(() => {
-    discoverRecipesByIngredient()
-  }, [selectedIngredient])
+    props.discoverRecipesByIngredient()
+    console.log(props.selectedIngredient)
+  }, [props.selectedIngredient])
 
   const getMealId = (uri) => {
     let i = uri.length
@@ -44,8 +45,8 @@ export default function Discover() {
 
   const handleSearch = (e) => {
     e.preventDefault()
-    setSelectedIngredient(null)
-    setSelectedIngredient(searchValues)
+    props.setSelectedIngredient(null)
+    props.setSelectedIngredient(searchValues)
     setSearchValues('')
   }
 
@@ -58,7 +59,7 @@ export default function Discover() {
     navigate('/mypantry')
   }
 
-  return mealsByIngredient ? (
+  return props.mealsByIngredient ? (
     <div>
       <h1>Discover Recipes</h1>
       <form onSubmit={handleSearch}>
@@ -73,7 +74,7 @@ export default function Discover() {
         <button>Search</button>
       </form>
       <div className="discover-recipe-list">
-        {mealsByIngredient.map((recipe) => (
+        {props.mealsByIngredient.map((recipe) => (
           <div key={recipe.recipe.uri} className="discover-meal-card">
             <h2 onClick={() => mealDetailsNav(recipe.recipe.uri)}>
               {recipe.recipe.label}

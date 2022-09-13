@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       imageUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(2000)
       },
       directions: {
         type: Sequelize.STRING

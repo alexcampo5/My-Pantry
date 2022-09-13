@@ -62,7 +62,7 @@ export default function UpdateRecipe(props) {
             required
           />
         </div>
-        <button>Update Post</button>
+        <button>Update Recipe</button>
       </form>
     </div>
   )

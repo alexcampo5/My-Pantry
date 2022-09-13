@@ -35,7 +35,7 @@ export default function NewIngredient() {
           />
         </div>
         <div>
-          <label htmlFor="image url">Image Url</label>
+          <label htmlFor="units">Units</label>
           <input
             onChange={handleIngredientChange}
             name="units"

@@ -56,11 +56,11 @@ const updateIngredient = async (req, res) => {
 const deleteIngredient = async (req, res) => {
   try {
     let deletedIngredient = await Ingredient.destroy({
-      where: { id: req.params.recipe_id }
+      where: { id: req.params.ingredient_id }
     })
     res.send(deletedIngredient)
   } catch (error) {
-    throw error
+    console.log(error)
   }
 }
 
