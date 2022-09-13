@@ -16,13 +16,14 @@ function App() {
   const [userIdLogin, setUserIdLogin] = useState(null)
 
   const getUserData = async () => {
-    const res = await axios.get(`http://localhost:3001/users/${userIdLogin}`)
+    //const res = await axios.get(`http://localhost:3001/users/${userIdLogin}`)
+    const res = await axios.get(`http://localhost:3001/users/`)
     setUser(res.data)
   }
 
   useEffect(() => {
     getUserData()
-  }, [userIdLogin])
+  }, [])
 
   return user ? (
     <div className="App">

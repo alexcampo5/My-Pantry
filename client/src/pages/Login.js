@@ -13,11 +13,11 @@ export default function Login(props) {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault()
-    let properUser = users.find((user) => {
-      user.username === userLoginValues.username &&
-        user.passwordDigest === userLoginValues.passwordDigest
-    })
-    props.loginId(properUser.id)
+    // let properUser = users.find((user) => {
+    //   user.username === userLoginValues.username &&
+    //     user.passwordDigest === userLoginValues.passwordDigest
+    // })
+    // props.loginId(properUser.id)
     navigate('/mypantry')
   }
 

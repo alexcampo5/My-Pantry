@@ -56,7 +56,7 @@ export default function NewRecipe() {
             required
           />
         </div>
-        <button>Create Post</button>
+        <button>Create Recipe</button>
       </form>
     </div>
   )
