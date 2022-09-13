@@ -23,9 +23,9 @@ export default function NewRecipe() {
     navigate('/mypantry')
   }
   return (
-    <div className="createpostpage">
-      <form className="createpost" onSubmit={handleRecipeSubmit}>
-        <div>
+    <div className="create-recipe-page">
+      <form onSubmit={handleRecipeSubmit}>
+        <div className="create-input-field">
           <label htmlFor="recipeName">Recipe Name</label>
           <input
             onChange={handleRecipeChange}
@@ -35,7 +35,7 @@ export default function NewRecipe() {
             required
           />
         </div>
-        <div>
+        <div className="create-input-field">
           <label htmlFor="image url">Image Url</label>
           <input
             onChange={handleRecipeChange}
@@ -46,7 +46,7 @@ export default function NewRecipe() {
           />
         </div>
 
-        <div>
+        <div className="create-input-field">
           <label htmlFor="directions">Directions</label>
           <input
             onChange={handleRecipeChange}

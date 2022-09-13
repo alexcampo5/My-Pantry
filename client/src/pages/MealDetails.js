@@ -21,13 +21,13 @@ export default function MealDetails() {
   return mealInfo ? (
     <div className="meal-info">
       <h1>{mealInfo.recipe.label}</h1>
-      <img src={mealInfo.recipe.image} />
+      <img src={mealInfo.recipe.image} className />
       <h3>Ingredients</h3>
       {mealInfo.recipe.ingredientLines.map((line) => (
         <p key={line}>{line}</p>
       ))}
       <a href={mealInfo.recipe.url} target="_blank">
-        See full recipe
+        <button>See full recipe</button>
       </a>
     </div>
   ) : (
