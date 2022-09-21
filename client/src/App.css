@@ -83,8 +83,8 @@ button{
 
 .recipe-image{
   border-radius: 10%;
-  width: 80vw;
-  height: 30vh
+  width: 30vw;
+  height: 40vh
 }
 
 button:active {

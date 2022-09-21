@@ -40,7 +40,10 @@ function App() {
     <div className="App">
       <h1 className="title">MyPantry</h1>
       <Routes>
-        <Route path="/login" element={<Login loginId={setUserIdLogin} />} />
+        <Route
+          path="/login"
+          element={<Login loginId={setUserIdLogin} userIdLogin={userIdLogin} />}
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route
           path="/mypantry"

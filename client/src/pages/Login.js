@@ -26,6 +26,7 @@ export default function Login(props) {
     setUsers(res.data)
   }
 
+  console.log(users)
   useEffect(() => {
     getAllUsers()
   }, [])

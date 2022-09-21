@@ -17,7 +17,7 @@ export default function NewIngredient() {
 
   const handleIngredientSubmit = async (e) => {
     e.preventDefault()
-    let res = await axios.post(`http://localhost:3001/ingredients`, newIngredientValues)
+    await axios.post(`http://localhost:3001/ingredients`, newIngredientValues)
     setNewIngredientValues(initialIngredientValues)
     navigate('/mypantry')
   }

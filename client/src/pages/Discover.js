@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import RecipeCard from '../components/RecipeCard'
+// import RecipeCard from '../components/RecipeCard'
 import { useNavigate } from 'react-router-dom'
 
 export default function Discover(props) {
@@ -20,7 +20,6 @@ export default function Discover(props) {
 
   useEffect(() => {
     props.discoverRecipesByIngredient()
-    console.log(props.selectedIngredient)
   }, [props.selectedIngredient])
 
   const getMealId = (uri) => {
@@ -28,7 +27,6 @@ export default function Discover(props) {
     while (i > 0) {
       if (uri.charAt(i) === '_') {
         return uri.substring(i + 1)
-        break
       }
       i--
     }
@@ -50,8 +48,8 @@ export default function Discover(props) {
     setSearchValues('')
   }
 
-  const addMealToFavorites = (recipe) => {
-    let res = axios.post(`http://localhost:3001/recipes/`, {
+  const addMealToFavorites = async (recipe) => {
+    await axios.post(`http://localhost:3001/recipes/`, {
       recipeName: recipe.label,
       imageUrl: recipe.image,
       directions: recipe.url
