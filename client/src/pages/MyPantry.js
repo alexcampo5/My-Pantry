@@ -37,12 +37,12 @@ export default function MyPantry(props) {
   }
 
   const deleteRecipe = async (id) => {
-    let res = await axios.delete(`http://localhost:3001/recipes/${id}`)
+    await axios.delete(`http://localhost:3001/recipes/${id}`)
     navigate('/mypantry')
   }
 
   const deleteIngredient = async (id) => {
-    let res = await axios.delete(`http://localhost:3001/ingredients/${id}`)
+    await axios.delete(`http://localhost:3001/ingredients/${id}`)
     navigate('/mypantry')
   }
 
@@ -74,11 +74,13 @@ export default function MyPantry(props) {
                 src={trashIcon}
                 className="trash-icon"
                 onClick={() => deleteIngredient(ingredient.id)}
+                alt="delete"
               />
               <img
                 src={searchIcon}
                 className="trash-icon"
                 onClick={() => searchMealsByIngredient(ingredient.name)}
+                alt="search"
               />
             </div>
           </div>
@@ -92,7 +94,7 @@ export default function MyPantry(props) {
         {favoriteMeals.map((meal) => (
           <div key={meal.name}>
             <h2>{meal.recipeName}</h2>
-            <img src={meal.imageUrl} className="recipe-image" />
+            <img src={meal.imageUrl} className="recipe-image" alt="recipe" />
             {meal.directions.substring(0, 4) === 'http' ? (
               <a href={meal.directions} target="_blank">
                 <button>See details</button>

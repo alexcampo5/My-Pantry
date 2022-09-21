@@ -8,7 +8,7 @@ export default function NavBar () {
     <div className="navbar">
       <Link to='/mypantry'><img src={pantry} className='nav-icon'/></Link>
       <Link to='/discover'><img src={discover} className='nav-icon'/></Link>
-      <Link to='/planner'><img src={planner} className='nav-icon'/></Link>
+      {/* <Link to='/planner'><img src={planner} className='nav-icon'/></Link> */}
     </div>
   )
 }

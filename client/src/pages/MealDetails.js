@@ -21,7 +21,11 @@ export default function MealDetails() {
   return mealInfo ? (
     <div className="meal-info">
       <h1>{mealInfo.recipe.label}</h1>
-      <img src={mealInfo.recipe.image} className />
+      <img
+        src={mealInfo.recipe.image}
+        className="discover-image"
+        alt="recipe"
+      />
       <h3>Ingredients</h3>
       {mealInfo.recipe.ingredientLines.map((line) => (
         <p key={line}>{line}</p>

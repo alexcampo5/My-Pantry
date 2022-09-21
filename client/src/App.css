@@ -1,11 +1,36 @@
 html{
   /* background-color: #76BA99; */
   background-image: url('./assets/Wooden\ Background.avif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+}
+
+button{
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .App {
   text-align: center;
-  margin-top: -5%;
   color: #2ea44f;
 }
 
@@ -13,8 +38,103 @@ html{
   font-family: 'Pacifico', cursive;
 }
 
+.navbar{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 10%;
+  height: 15%;
+  /* border-top-left-radius: 10%;
+  border-top-right-radius: 15%; */
+}
+
+.nav-icon{
+  width: 7vw;
+  height: 9vh;
+}
+
+.discover-meal-card{
+  margin: 5%;
+  padding-bottom: 3%;
+  border-bottom: solid black;
+}
+
+.ingredient-container{
+  margin: 5%;
+  padding-bottom: 3%;
+  border-bottom: solid black;
+}
+
+.discover-image{
+  border-radius: 10%;
+}
+
+.discover-recipe-list{
+  margin-bottom: 18%;
+}
+
+.meal-info{
+  margin-bottom: 18%;
+}
+
+.recipe-image{
+  border-radius: 10%;
+  width: 80vw;
+  height: 30vh
+}
+
+button:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.my-pantry-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.create-input-field{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.my-pantry-page{
+  margin-bottom: 20%;
+}
+
+.trash-icon{
+  width: 8vw;
+  height: 5vh
+}
+
+.individual-ingredient-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trash-search-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
 @media screen and (max-width: 600px){
+  .App {
+    text-align: center;
+    margin-top: -5%;
+    color: #2ea44f;
+  }
+
   .navbar{
     display: flex;
     justify-content: space-around;
