@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { BASE_URL } from '../services/api'
 
 export default function NewIngredient() {
   let navigate = useNavigate()
@@ -17,7 +18,7 @@ export default function NewIngredient() {
 
   const handleIngredientSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`http://localhost:3001/ingredients`, newIngredientValues)
+    await axios.post(`${BASE_URL}/ingredients`, newIngredientValues)
     setNewIngredientValues(initialIngredientValues)
     navigate('/mypantry')
   }

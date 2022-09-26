@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 // import RecipeCard from '../components/RecipeCard'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from '../services/api'
 
 export default function Discover(props) {
   const navigate = useNavigate()
@@ -49,7 +50,7 @@ export default function Discover(props) {
   }
 
   const addMealToFavorites = async (recipe) => {
-    await axios.post(`http://localhost:3001/recipes/`, {
+    await axios.post(`${BASE_URL}/recipes/`, {
       recipeName: recipe.label,
       imageUrl: recipe.image,
       directions: recipe.url
@@ -60,7 +61,7 @@ export default function Discover(props) {
   return props.mealsByIngredient ? (
     <div>
       <h1>Discover Recipes</h1>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           name="discover search"

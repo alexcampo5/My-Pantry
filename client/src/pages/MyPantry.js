@@ -5,6 +5,7 @@ import NewIngredient from '../components/NewIngredient'
 import UpdateRecipe from './UpdateRecipe'
 import trashIcon from '../assets/trash.png'
 import searchIcon from '../assets/search.png'
+import { BASE_URL } from '../services/api'
 
 export default function MyPantry(props) {
   const navigate = useNavigate()
@@ -13,13 +14,13 @@ export default function MyPantry(props) {
   const [visible, setVisible] = useState(false)
 
   const getFavoriteRecipes = async () => {
-    const res = await axios.get(`http://localhost:3001/recipes/`)
+    const res = await axios.get(`${BASE_URL}/recipes/`)
     console.log(res.data)
     setFavoriteMeals(res.data)
   }
 
   const getIngredients = async () => {
-    const res = await axios.get(`http://localhost:3001/ingredients/`)
+    const res = await axios.get(`${BASE_URL}/ingredients/`)
     console.log(res.data)
     setMyIngredients(res.data)
   }
@@ -37,12 +38,12 @@ export default function MyPantry(props) {
   }
 
   const deleteRecipe = async (id) => {
-    await axios.delete(`http://localhost:3001/recipes/${id}`)
+    await axios.delete(`${BASE_URL}/recipes/${id}`)
     navigate('/mypantry')
   }
 
   const deleteIngredient = async (id) => {
-    await axios.delete(`http://localhost:3001/ingredients/${id}`)
+    await axios.delete(`${BASE_URL}/ingredients/${id}`)
     navigate('/mypantry')
   }
 

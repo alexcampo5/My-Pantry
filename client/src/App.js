@@ -10,6 +10,7 @@ import MealDetails from './pages/MealDetails'
 import NewPost from './pages/NewRecipe'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import { BASE_URL } from './services/api'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -18,8 +19,9 @@ function App() {
   const [mealsByIngredient, setMealsByIngredient] = useState()
 
   const getUserData = async () => {
-    //const res = await axios.get(`http://localhost:3001/users/${userIdLogin}`)
-    const res = await axios.get(`http://localhost:3001/users/`)
+    //const res = await axios.get(`${BASE_URL}/users/${userIdLogin}`)
+    console.log(BASE_URL)
+    const res = await axios.get(`${BASE_URL}/users/`)
     setUser(res.data)
   }
 

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from '../services/api'
 
 export default function Login(props) {
   const navigate = useNavigate()
@@ -22,7 +23,7 @@ export default function Login(props) {
   }
 
   const getAllUsers = async () => {
-    let res = await axios.get(`http://localhost:3001/users`)
+    let res = await axios.get(`${BASE_URL}/users`)
     setUsers(res.data)
   }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
 export default function UpdateRecipe(props) {
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ export default function UpdateRecipe(props) {
   const handleRecipeUpdate = async (e) => {
     e.preventDefault()
     let res = await axios.put(
-      `http://localhost:3001/recipes/${props.recipe.id}`,
+      `${BASE_URL}/recipes/${props.recipe.id}`,
       updatedRecipe
     )
     console.log(props.recipe.id)
