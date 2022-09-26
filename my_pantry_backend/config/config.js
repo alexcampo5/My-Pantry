@@ -16,7 +16,6 @@
 //   }
 // }
 
-require('dotenv').config()
 module.exports = {
   development: {
     database: 'my_pantry_dev',
