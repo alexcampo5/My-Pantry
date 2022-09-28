@@ -6,8 +6,7 @@ import { BASE_URL } from '../services/api'
 export default function Login(props) {
   let initialLoginValues = {
     username: '',
-    passwordDigest: '',
-    email: ''
+    passwordDigest: ''
   }
   const navigate = useNavigate()
   const [users, setUsers] = useState()
@@ -28,6 +27,10 @@ export default function Login(props) {
     navigate('/mypantry')
   }
 
+  // const handleGuestSubmit = () => {
+  //   props.loginId('guest')
+  // }
+
   const getAllUsers = async () => {
     let res = await axios.get(`${BASE_URL}/users`)
     setUsers(res.data)
@@ -37,10 +40,15 @@ export default function Login(props) {
     navigate('/signup')
   }
 
+  const navigateGuest = () => {
+    navigate('/mypantry')
+  }
+
   console.log(users)
   useEffect(() => {
     getAllUsers()
   }, [])
+
   return (
     <div className="login">
       <form onSubmit={handleLoginSubmit}>
@@ -67,7 +75,7 @@ export default function Login(props) {
         <button>Log in</button>
       </form>
       <button onClick={navigateSignUp}>Sign Up</button>
-      <button>Continue as guest</button>
+      <button onClick={navigateGuest}>Continue as guest</button>
     </div>
   )
 }
