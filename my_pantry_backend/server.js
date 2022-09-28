@@ -8,7 +8,11 @@ const AppRouter = require('./routes/AppRouter')
 const PORT = process.env.PORT || 3001
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'localhost:3000'],
+  origin: [
+    'http://localhost:3000',
+    'localhost:3000',
+    'https://my-pantry-abc.netlify.app/'
+  ],
   methods: ['GET', 'POST', 'DELETE', 'PUT', 'UPDATE'],
   preflightContinue: false,
   credentials: true
