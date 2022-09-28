@@ -38,12 +38,12 @@ function App() {
     getUserData()
   }, [])
 
-  return user ? (
+  return (
     <div className="App">
       <h1 className="title">MyPantry</h1>
       <Routes>
         <Route
-          path="/login"
+          path="/"
           element={<Login loginId={setUserIdLogin} userIdLogin={userIdLogin} />}
         />
         <Route path="/signup" element={<SignUp />} />
@@ -68,10 +68,6 @@ function App() {
         <Route path="/newrecipe" element={<NewPost />} />
       </Routes>
       <NavBar />
-    </div>
-  ) : (
-    <div>
-      <h1>Loading...</h1>
     </div>
   )
 }
