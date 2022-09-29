@@ -63,13 +63,18 @@ button{
   margin-bottom: 3px;
 }
 .discover-meal-card{
-  padding-bottom: 3%;
-  border-bottom: solid black;
+  margin-bottom: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  /* border-bottom: solid black; */
   display: flex;
   flex-direction: column;
   justify-content:space-around;
   align-items: center;
   height: 70vh;
+  width: 70vw;
+  background-color: white;
+  border-radius: 10%;
 }
 
 .ingredient-container{

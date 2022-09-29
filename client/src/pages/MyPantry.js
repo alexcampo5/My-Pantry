@@ -93,7 +93,7 @@ export default function MyPantry(props) {
       <div className="favorite-meal-container">
         <h1>My Favorite Meals</h1>
         {favoriteMeals.map((meal) => (
-          <div key={meal.name}>
+          <div key={meal.name} className="discover-meal-card">
             <h2>{meal.recipeName}</h2>
             <img src={meal.imageUrl} className="recipe-image" alt="recipe" />
             {meal.directions.substring(0, 4) === 'http' ? (
